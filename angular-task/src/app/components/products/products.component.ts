@@ -20,7 +20,7 @@ export class ProductsComponent implements OnInit {
         query: GET_PRODUCTS,
       })
       .valueChanges.subscribe((result: any) => {
-        this.products = result?.data?.products;
+        this.products = result?.data?.getAllProducts;
         this.loading = result?.loading;
         this.error = result?.error;
       });
