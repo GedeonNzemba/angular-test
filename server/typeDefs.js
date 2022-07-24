@@ -8,9 +8,19 @@ const typeDefs = gql`
     id: String
   }
 
+  type Prices {
+    sku: Int
+    price: Int
+    discount: Int
+    id: String
+  }
+
   type Query {
     getAllProducts: [Products]
     getProduct(id: ID): Products
+
+    getAllPrices: [Prices]
+    getPrice(id: ID): Prices
   }
 
   type Mutation {
@@ -20,13 +30,26 @@ const typeDefs = gql`
         image: String
         id: String
     ): Products
+    createPrice(
+      sku: Int
+    price: Int
+    discount: Int
+    id: String
+  ): Prices
     deleteProduct(id: ID): String
+    deletePrice(id: ID): String
     updateProduct(
         sku: Int
         name: String
         image: String
         id: String
     ): Products
+    updatePrice(
+      sku: Int
+    price: Int
+    discount: Int
+    id: String
+  ): Prices
   }
 `;
 
