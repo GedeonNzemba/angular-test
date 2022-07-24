@@ -10,4 +10,14 @@ const GET_PRODUCTS = gql`
   }
 `;
 
-export { GET_PRODUCTS };
+const GET_PRICES = gql`
+  query {
+    getAllPrices {
+      sku
+      price
+      discount
+    }
+  }
+`;
+
+export { GET_PRODUCTS, GET_PRICES };

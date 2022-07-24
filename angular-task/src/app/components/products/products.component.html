@@ -1,8 +1,17 @@
-<p>products works!</p>
-<div *ngIf="loading">Loading ...</div>
-<div *ngIf="error">Error ...</div>
+<div *ngIf="products_loading">Loading Products ...</div>
+<div *ngIf="products_error">Error in products ...</div>
+<div *ngIf="prices_loading">Loading Prices ...</div>
+<div *ngIf="prices_error">Error in prices ...</div>
 <div *ngIf="products">
+    <h1>PRODUCTS</h1>
     <div *ngFor="let product of products">
         <p>{{ product.sku}}: {{product.name}}</p>
+    </div>
+</div>
+<br />
+<div *ngIf="price_lists">
+    <h1>PRICE LISTS</h1>
+    <div *ngFor="let price of price_lists">
+        <p>{{ price.sku}}: {{price.price}}</p>
     </div>
 </div>
