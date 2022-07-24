@@ -1,0 +1,8 @@
+<p>products works!</p>
+<div *ngIf="loading">Loading ...</div>
+<div *ngIf="error">Error ...</div>
+<div *ngIf="products">
+    <div *ngFor="let product of products">
+        <p>{{ product.sku}}: {{product.name}}</p>
+    </div>
+</div>
