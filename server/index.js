@@ -13,6 +13,12 @@ async function initServer() {
     const apolloServer = new ApolloServer({ typeDefs, resolvers });
     await apolloServer.start();
     apolloServer.applyMiddleware({ app });
+
+    app.use(express.static(path.join(__dirname + '/dist')));
+    app.get('/', function (req, res) {
+        res.sendFile(path.join(__dirname + '/dist/index.js'));
+    })
+
     app.use((req, res) => {
         res.send('Server started successfully');
     });
