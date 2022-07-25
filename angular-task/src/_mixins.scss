@@ -1,0 +1,30 @@
+// media queries
+@mixin for-phone-landscape {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 850px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin for-small-phones {
+  @media (max-width: 400px) {
+    @content;
+  }
+}
+
+@mixin for-xsmall-phones {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+
+@mixin for-small-phone {
+  @media (max-width: 360px) {
+    @content;
+  }
+}
+
+@mixin xxxsmall-mobile {
+  @media (max-width: 300px) {
+    @content;
+  }
+}

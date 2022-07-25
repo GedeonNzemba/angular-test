@@ -1,23 +1,15 @@
 import { gql } from 'apollo-angular';
 
-const GET_PRODUCTS = gql`
+const GET_PRICE_LISTS = gql`
   query {
-    getAllProducts {
+    getAllData {
       sku
       name
       image
-    }
-  }
-`;
-
-const GET_PRICES = gql`
-  query {
-    getAllPrices {
-      sku
       price
       discount
     }
   }
 `;
 
-export { GET_PRODUCTS, GET_PRICES };
+export { GET_PRICE_LISTS };

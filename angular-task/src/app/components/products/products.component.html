@@ -1,17 +1,40 @@
-<div *ngIf="products_loading">Loading Products ...</div>
-<div *ngIf="products_error">Error in products ...</div>
-<div *ngIf="prices_loading">Loading Prices ...</div>
-<div *ngIf="prices_error">Error in prices ...</div>
-<div *ngIf="products">
-    <h1>PRODUCTS</h1>
-    <div *ngFor="let product of products">
-        <p>{{ product.sku}}: {{product.name}}</p>
+<div class="page">
+    <div class="header">
+      <div class="title">
+        <img
+          src="https://freesvg.org/img/fficient%20energy%20-%20ficiencia%20energtica.png"
+        />
+        <h2>Contract Manager Features</h2>
+      </div>
+  
+      <div class="btn-wrapper">
+        <button type="button">Book Demo</button>
+      </div>
     </div>
-</div>
-<br />
-<div *ngIf="price_lists">
-    <h1>PRICE LISTS</h1>
-    <div *ngFor="let price of price_lists">
-        <p>{{ price.sku}}: {{price.price}}</p>
+  
+    <div *ngIf="loading">
+        <img src="https://lottiefiles.com/9825-loading-screen-loader-spinning-circle" alt="loader">
     </div>
-</div>
+
+    <div *ngIf="error">Error in prices ...</div>
+
+    <div class="content" *ngIf="data">
+      <div class="product-wrapper">
+        <div class="product" *ngFor="let item of data">
+          <div class="element"></div>
+          <div class="product-name">{{ item.name }}</div>
+          <img [src]="item.image" class="product-image" />
+          <div class="product-price">R{{ item.price }}</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer">
+      <ul>
+        <li>Contact us</li>
+        <li>Privacy policy</li>
+        <li>Terms of service</li>
+      </ul>
+    </div>
+  </div>
+  
